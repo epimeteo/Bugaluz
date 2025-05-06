@@ -13,8 +13,7 @@ export default function Navigation() {
     { label: "¿Qué es BUGALUZ?", href: "#about" },
     { label: "Programa 2025", href: "#program" },
     { label: "El Evento Solar", href: "#solar-event" },
-    { label: "Feria de Energía", href: "#energy-fair" },
-    { label: "Aliados", href: "#partners" },
+    { label: "Alianzas", href: "#partners" },
     { label: "Contacto", href: "#contact" },
   ]
 
@@ -44,7 +43,7 @@ export default function Navigation() {
       >
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <a href="#inicio" className="flex items-center">
-            <img src="/bugaluz-logo-small.svg" alt="BUGALUZ" className="h-8" />
+            <img src="/bugaluz-logo.svg" alt="BUGALUZ" className="h-10" />
           </a>
 
           {/* Desktop Navigation */}

@@ -1,9 +1,17 @@
 "use client"
 
 import { usePathname, useSearchParams } from "next/navigation"
-import { useEffect, Suspense } from "react"
+import { useEffect } from "react"
 
-// This component uses the hooks and will be wrapped in Suspense
+// Add type declaration for gtag
+declare global {
+  interface Window {
+    gtag: (command: "config" | "event" | "js" | "set", targetId: string, config?: Record<string, any>) => void
+    dataLayer: any[]
+  }
+}
+
+// This component uses the hooks
 function AnalyticsTracker() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -21,7 +29,7 @@ function AnalyticsTracker() {
   return null
 }
 
-// This is the main component that includes the script tags and the tracker
+// This is the main component that includes the script tags
 export function Analytics() {
   return (
     <>
@@ -36,9 +44,7 @@ export function Analytics() {
           `,
         }}
       />
-      <Suspense fallback={null}>
-        <AnalyticsTracker />
-      </Suspense>
+      <AnalyticsTracker />
     </>
   )
 }

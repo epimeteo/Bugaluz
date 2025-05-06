@@ -8,74 +8,70 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 
 export default function Program() {
-  const [activeTab, setActiveTab] = useState("may")
+  const [activeTab, setActiveTab] = useState("day1")
 
   const programData = {
-    may: [
+    day1: [
       {
-        time: "10:00 - 12:00",
-        title: "Apertura Oficial",
-        description: "Ceremonia de inauguración del festival con autoridades locales y patrocinadores.",
+        time: "10:00",
+        title: "Apertura Stands Feria Tecnológica",
+        description:
+          "Inauguración de los stands de la feria tecnológica con las últimas innovaciones en energía solar.",
         location: "Parque Cabal",
-        category: "ceremonia",
-      },
-      {
-        time: "12:00 - 13:00",
-        title: "Fenómeno Solar",
-        description: "Observación del rayo de luz atravesando la Catedral de San Pedro.",
-        location: "Catedral de San Pedro",
-        category: "evento principal",
-      },
-      {
-        time: "15:00 - 17:00",
-        title: "Conferencia: El Poder de la Luz",
-        description: "Expertos hablan sobre la importancia histórica y científica del fenómeno solar.",
-        location: "Auditorio Municipal",
-        category: "conferencia",
-      },
-      {
-        time: "19:00 - 21:00",
-        title: "Video Mapping: Orígenes",
-        description: "Proyección audiovisual sobre la fachada de la Catedral que narra la historia de Buga.",
-        location: "Catedral de San Pedro",
-        category: "espectáculo",
-      },
-    ],
-    july: [
-      {
-        time: "09:00 - 11:00",
-        title: "Feria de Energía: Inauguración",
-        description: "Apertura de la exposición con las últimas innovaciones en energía sostenible.",
-        location: "Centro de Convenciones",
         category: "feria",
       },
       {
-        time: "12:00 - 13:00",
-        title: "Fenómeno Solar",
-        description: "Segunda observación anual del rayo de luz atravesando la Catedral.",
-        location: "Catedral de San Pedro",
-        category: "evento principal",
-      },
-      {
-        time: "14:00 - 16:00",
-        title: "Panel: Futuro Energético",
-        description: "Expertos internacionales debaten sobre las tendencias en transición energética.",
-        location: "Auditorio Municipal",
+        time: "14:00",
+        title: "Paneles y exposiciones académicas y de negocios",
+        description: "Conferencias y paneles con expertos en energía solar y sostenibilidad.",
+        location: "Auditorios",
         category: "conferencia",
       },
       {
-        time: "17:00 - 19:00",
-        title: "Talleres Interactivos",
-        description: "Actividades prácticas sobre energía solar para todas las edades.",
+        time: "20:00",
+        title: "Mapping",
+        description: "Espectáculo de mapping en la fachada de la Catedral de San Pedro.",
+        location: "Catedral",
+        category: "espectáculo",
+      },
+    ],
+    day2: [
+      {
+        time: "09:00",
+        title: "Continuación Stands Feria Tecnológica",
+        description: "Segundo día de la feria tecnológica con exhibiciones y demostraciones.",
         location: "Parque Cabal",
-        category: "taller",
+        category: "feria",
       },
       {
-        time: "20:00 - 22:00",
-        title: "Espectáculo de Luz y Sonido",
-        description: "Gran espectáculo que combina iluminación, música y danza.",
-        location: "Plaza Principal",
+        time: "09:00 - 12:00",
+        title: "Paneles y exposiciones académicas y de negocios",
+        description: "Continuación de conferencias y paneles sobre innovación en energía solar.",
+        location: "Auditorios",
+        category: "conferencia",
+      },
+      {
+        time: "16:00",
+        title: "Evento Solar Catedral. Concierto Música de Cámara",
+        description: "Observación del fenómeno solar en la Catedral acompañado de un concierto de música de cámara.",
+        location: "Catedral",
+        category: "evento principal",
+      },
+      {
+        time: "20:00",
+        title: "Mapping",
+        description: "Espectáculo de mapping en la fachada de la Catedral de San Pedro.",
+        location: "Catedral",
         category: "espectáculo",
+      },
+    ],
+    day3: [
+      {
+        time: "09:00 - 19:00",
+        title: "Continuación Stands Feria Tecnológica. Cierre",
+        description: "Último día de la feria tecnológica y ceremonia de clausura.",
+        location: "Parque Cabal",
+        category: "feria",
       },
     ],
   }
@@ -99,22 +95,25 @@ export default function Program() {
         <SectionHeading>Programa 2025</SectionHeading>
 
         <div className="mt-12">
-          <Tabs defaultValue="may" onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="may" className="text-base">
-                17 de Mayo (Evento Piloto)
+          <Tabs defaultValue="day1" onValueChange={setActiveTab} className="w-full">
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="day1" className="text-base">
+                Viernes 25 de Julio
               </TabsTrigger>
-              <TabsTrigger value="july" className="text-base">
-                26 de Julio (Evento Principal)
+              <TabsTrigger value="day2" className="text-base">
+                Sábado 26 de Julio
+              </TabsTrigger>
+              <TabsTrigger value="day3" className="text-base">
+                Domingo 27 de Julio
               </TabsTrigger>
             </TabsList>
 
-            {["may", "july"].map((month) => (
-              <TabsContent key={month} value={month} className="mt-6 space-y-6">
+            {Object.entries(programData).map(([day, events]) => (
+              <TabsContent key={day} value={day} className="mt-6 space-y-6">
                 <div className="flex items-center gap-2 mb-4">
                   <Calendar className="h-5 w-5 text-orange-500" />
                   <h3 className="text-xl font-semibold">
-                    {month === "may" ? "17 de Mayo, 2025" : "26 de Julio, 2025"}
+                    {day === "day1" ? "25 de Julio, 2025" : day === "day2" ? "26 de Julio, 2025" : "27 de Julio, 2025"}
                   </h3>
                 </div>
 
@@ -122,7 +121,7 @@ export default function Program() {
                   <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-orange-200 md:left-12"></div>
 
                   <div className="space-y-8">
-                    {programData[month as keyof typeof programData].map((event, index) => (
+                    {events.map((event, index) => (
                       <div key={index} className="relative">
                         <div className="absolute left-8 top-6 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-orange-500 bg-white md:left-12"></div>
 

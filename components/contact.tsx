@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Instagram, Facebook, Youtube, Twitter } from "lucide-react"
+import { Instagram, Twitter } from "lucide-react"
 import {
   submitContactForm,
   submitCompanyForm,
@@ -149,22 +149,15 @@ export default function Contact() {
         <div className="mt-12 grid gap-12 md:grid-cols-2">
           <div>
             <h3 className="mb-6 text-2xl font-bold text-orange-400">Conéctate con BUGALUZ</h3>
-            <p className="mb-8 text-gray-300">
-              Estamos aquí para responder tus preguntas sobre el festival, oportunidades de participación, patrocinio o
-              cualquier otra consulta que puedas tener.
-            </p>
 
             <div className="mb-8 space-y-6">
               <div>
-                <h4 className="mb-2 text-lg font-semibold">Dirección</h4>
-                <p className="text-gray-300">Catedral de San Pedro, Centro Histórico</p>
-                <p className="text-gray-300">Buga, Valle del Cauca, Colombia</p>
-              </div>
-
-              <div>
                 <h4 className="mb-2 text-lg font-semibold">Contacto</h4>
-                <p className="text-gray-300">info@bugaluz.co</p>
-                <p className="text-gray-300">+57 (2) 123 4567</p>
+                <p className="text-gray-300">Pedroluis Morenorojas</p>
+                <p className="text-gray-300">Gestor</p>
+                <p className="text-gray-300">Carrera 12 # 2-80 Buga, Valle, Colombia</p>
+                <p className="text-gray-300">+57 310 537 6088</p>
+                <p className="text-gray-300">info@bugaluz.com</p>
               </div>
 
               <div>
@@ -178,24 +171,6 @@ export default function Contact() {
                     aria-label="Instagram"
                   >
                     <Instagram className="h-5 w-5" />
-                  </a>
-                  <a
-                    href="https://facebook.com/bugaluz"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full bg-gray-800 p-2 text-white transition-colors hover:bg-orange-500"
-                    aria-label="Facebook"
-                  >
-                    <Facebook className="h-5 w-5" />
-                  </a>
-                  <a
-                    href="https://youtube.com/bugaluz"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full bg-gray-800 p-2 text-white transition-colors hover:bg-orange-500"
-                    aria-label="YouTube"
-                  >
-                    <Youtube className="h-5 w-5" />
                   </a>
                   <a
                     href="https://twitter.com/bugaluz"
@@ -347,11 +322,11 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="name" className="text-white">
+                      <Label htmlFor="name-company" className="text-white">
                         Nombre
                       </Label>
                       <Input
-                        id="name"
+                        id="name-company"
                         name="name"
                         value={formState.name}
                         onChange={handleChange}
@@ -482,11 +457,11 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="name" className="text-white">
+                      <Label htmlFor="name-sponsor" className="text-white">
                         Nombre
                       </Label>
                       <Input
-                        id="name"
+                        id="name-sponsor"
                         name="name"
                         value={formState.name}
                         onChange={handleChange}
@@ -617,11 +592,11 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="name" className="text-white">
+                      <Label htmlFor="name-volunteer" className="text-white">
                         Nombre
                       </Label>
                       <Input
-                        id="name"
+                        id="name-volunteer"
                         name="name"
                         value={formState.name}
                         onChange={handleChange}

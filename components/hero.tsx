@@ -46,12 +46,8 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center text-white">
-        <div className="mb-6 w-40 md:w-56">
-          <img src="/bugaluz-logo.svg" alt="BUGALUZ" className="w-full" />
-        </div>
-
         <h1 className="mb-4 max-w-3xl text-3xl font-bold leading-tight md:text-5xl">
-          La luz ha llegado a Buga. Descubre su historia, su poder y su futuro.
+          La Luz Nos Une, La Energía Nos Impulsa
         </h1>
 
         <p className="mb-8 text-xl font-medium md:text-2xl">17 de mayo y 26 de julio de 2025</p>
