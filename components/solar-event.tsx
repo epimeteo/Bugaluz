@@ -133,7 +133,7 @@ export default function SolarEvent() {
         <SectionHeading light>El Evento Solar</SectionHeading>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:gap-12">
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-start">
             <p className="mb-6 text-gray-300">
               Desde su construcción en el siglo XVII, la Catedral San Pedro de Buga ha sido testigo de un fenómeno solar
               extraordinario. Cada 17 de mayo y 26 de julio (si las condiciones climáticas lo permiten) un rayo de sol
@@ -195,7 +195,7 @@ export default function SolarEvent() {
               experiencia espiritual, simbolizando la iluminación divina y la trascendencia.
             </p>
 
-            <div>
+            <div className="mt-auto">
               <h4 className="mb-3 text-lg font-semibold">Próxima transmisión en vivo</h4>
               <div className="mb-4">
                 <CountdownTimer targetDate="2025-07-26T16:45:00" />
@@ -220,9 +220,9 @@ export default function SolarEvent() {
               </div>
             </div>
 
-            <div className="rounded-lg bg-gray-900 p-6">
+            <div className="rounded-lg bg-gray-900 p-6 h-[calc(100%-24rem)]">
               <h3 className="mb-4 text-xl font-bold">Transmisión en vivo</h3>
-              <div className="aspect-w-16 aspect-h-9 bg-gray-800 flex items-center justify-center rounded">
+              <div className="flex flex-col justify-center items-center h-full">
                 <div className="text-center p-6">
                   <p className="text-gray-400">La transmisión en vivo estará disponible durante el evento</p>
                   <p className="text-sm text-gray-500 mt-2">26 de julio de 2025 - 4:45 PM</p>

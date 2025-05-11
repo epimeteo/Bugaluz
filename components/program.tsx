@@ -98,13 +98,13 @@ export default function Program() {
           <Tabs defaultValue="day1" onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="day1" className="text-base">
-                Viernes 25 de Julio
+                25 de Julio
               </TabsTrigger>
               <TabsTrigger value="day2" className="text-base">
-                Sábado 26 de Julio
+                26 de Julio
               </TabsTrigger>
               <TabsTrigger value="day3" className="text-base">
-                Domingo 27 de Julio
+                27 de Julio
               </TabsTrigger>
             </TabsList>
 
@@ -187,7 +187,6 @@ export default function Program() {
                 <li>Llegue con anticipación para los eventos principales</li>
                 <li>Use ropa cómoda y protección solar</li>
                 <li>Traiga su cámara para capturar el fenómeno solar</li>
-                <li>Consulte el programa completo en nuestra app móvil</li>
               </ul>
             </div>
           </div>

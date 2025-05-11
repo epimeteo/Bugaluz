@@ -42,14 +42,10 @@ export default function Navigation() {
           isScrolled ? "bg-black/90 backdrop-blur-md" : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <a href="#inicio" className="flex items-center">
-            <img src="/bugaluz-logo.svg" alt="BUGALUZ" className="h-10" />
-          </a>
-
-          {/* Desktop Navigation */}
+        <div className="container mx-auto flex h-16 items-center justify-center px-4">
+          {/* Desktop Navigation - Centered */}
           <div className="hidden md:block">
-            <ul className="flex space-x-6">
+            <ul className="flex space-x-8">
               {navItems.map((item, index) => (
                 <li key={index}>
                   <a
@@ -67,16 +63,12 @@ export default function Navigation() {
             </ul>
           </div>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle Menu"
-          >
-            {isMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
-          </Button>
+          {/* Mobile Menu Button - Positioned to the right */}
+          <div className="absolute right-4 md:hidden">
+            <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Menu">
+              {isMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
+            </Button>
+          </div>
         </div>
       </nav>
 
