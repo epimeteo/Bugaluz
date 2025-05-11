@@ -11,6 +11,7 @@ export default function Navigation() {
   const navItems = [
     { label: "Inicio", href: "#inicio" },
     { label: "¿Qué es BUGALUZ?", href: "#about" },
+    { label: "Componentes", href: "#components" },
     { label: "Programa 2025", href: "#program" },
     { label: "El Evento Solar", href: "#solar-event" },
     { label: "Alianzas", href: "#partners" },

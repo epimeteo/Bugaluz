@@ -2,6 +2,7 @@ import { Suspense } from "react"
 import type { Metadata } from "next"
 import Hero from "@/components/hero"
 import About from "@/components/about"
+import FestivalComponents from "@/components/festival-components"
 import Program from "@/components/program"
 import SolarEvent from "@/components/solar-event"
 import EnergyFair from "@/components/energy-fair"
@@ -42,6 +43,7 @@ export default function Home() {
         <Hero />
       </Suspense>
       <About />
+      <FestivalComponents />
       <Program />
       <SolarEvent />
       <EnergyFair />

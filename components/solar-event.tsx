@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Play, Info } from "lucide-react"
+import { Info } from "lucide-react"
 import { SectionHeading } from "@/components/section-heading"
 import { Button } from "@/components/ui/button"
 import CountdownTimer from "./countdown-timer"
@@ -198,7 +198,7 @@ export default function SolarEvent() {
             <div>
               <h4 className="mb-3 text-lg font-semibold">Próxima transmisión en vivo</h4>
               <div className="mb-4">
-                <CountdownTimer targetDate="2025-05-17T12:00:00" />
+                <CountdownTimer targetDate="2025-07-26T16:45:00" />
               </div>
             </div>
           </div>
@@ -206,18 +206,17 @@ export default function SolarEvent() {
           <div className="flex flex-col gap-6">
             <div className="relative overflow-hidden rounded-lg">
               <div className="aspect-w-16 aspect-h-9">
-                <img
-                  src="/solar-phenomenon.jpg"
-                  alt="Rayo de luz en la Catedral de San Pedro"
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
+                <iframe
+                  src="https://www.youtube.com/embed/mOOEQBj6m6s"
+                  title="Rayo de luz en la Catedral de San Pedro"
+                  className="h-full w-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
-              <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity hover:opacity-100">
-                <Button className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600">
-                  <Play className="h-4 w-4" />
-                  Ver simulación 3D
-                </Button>
+              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4">
+                <p className="text-sm text-white">Rayo de luz en la Catedral de San Pedro</p>
               </div>
             </div>
 
@@ -225,9 +224,8 @@ export default function SolarEvent() {
               <h3 className="mb-4 text-xl font-bold">Transmisión en vivo</h3>
               <div className="aspect-w-16 aspect-h-9 bg-gray-800 flex items-center justify-center rounded">
                 <div className="text-center p-6">
-                  <Play className="h-12 w-12 mx-auto mb-4 text-orange-500 opacity-50" />
                   <p className="text-gray-400">La transmisión en vivo estará disponible durante el evento</p>
-                  <p className="text-sm text-gray-500 mt-2">17 de mayo y 26 de julio de 2025</p>
+                  <p className="text-sm text-gray-500 mt-2">26 de julio de 2025 - 4:45 PM</p>
                 </div>
               </div>
             </div>

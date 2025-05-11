@@ -19,19 +19,19 @@ export default function Partners() {
           </div>
 
           <div className="flex flex-col justify-center">
+            <h3 className="mb-4 text-xl font-bold text-orange-600">Alianza Institucional Fundamental</h3>
             <p className="mb-6 text-lg text-gray-600">
-              BUGALUZ se cimenta en una alianza con la parroquia que regenta la catedral, según la cual autorizan el uso
-              de la misma el 26 de julio.
+              BUGALUZ se cimenta en una alianza entre el gestor y la parroquia de San Pedro que regenta la catedral, la
+              cual otorga el permiso para realizar el evento principal PATH OF LIFE.
             </p>
             <p className="mb-6 text-lg text-gray-600">
               Los gremios, la cámara de comercio y la municipalidad local siempre estarán invitados a vincularse y
-              aportar desde sus potencialidades.
+              aportar desde sus potencialidades. El gestor garantiza su capacidad de coordinar la
+              inter-institucionalidad que se requiera a nivel local, regional y nacional.
             </p>
             <p className="text-lg text-gray-600">
-              BUGALUZ busca establecer alianzas con gremios y empresas del sector energético y tecnológico solar, que
-              compartan su visión de innovación y sostenibilidad en calidad de patrocinadores únicos, para proyectar el
-              evento al largo plazo con un hecho que tiene un story telling poderoso para atraer la atención mediática
-              hacia los intereses del sector.
+              Actualmente buscamos la alianza con un gremio afín al concepto, que comparta la visión y el potencial de
+              este evento único, y que haga de BUGALUZ su cita anual de referencia.
             </p>
           </div>
         </div>

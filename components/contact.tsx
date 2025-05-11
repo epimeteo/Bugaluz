@@ -11,13 +11,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Instagram, Twitter } from "lucide-react"
-import {
-  submitContactForm,
-  submitCompanyForm,
-  submitSponsorForm,
-  submitVolunteerForm,
-  subscribeToNewsletter,
-} from "@/lib/actions"
+import { submitContactForm, submitCompanyForm, submitSponsorForm, submitVolunteerForm } from "@/lib/actions"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 
 export default function Contact() {
@@ -32,12 +26,6 @@ export default function Contact() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formResponse, setFormResponse] = useState<{
-    success?: boolean
-    message?: string
-    errors?: Array<{ field: string; message: string }>
-  } | null>(null)
-  const [newsletterEmail, setNewsletterEmail] = useState("")
-  const [newsletterResponse, setNewsletterResponse] = useState<{
     success?: boolean
     message?: string
     errors?: Array<{ field: string; message: string }>
@@ -126,21 +114,6 @@ export default function Contact() {
     }
   }
 
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setNewsletterResponse(null)
-
-    const formData = new FormData()
-    formData.append("email", newsletterEmail)
-
-    const response = await subscribeToNewsletter(formData)
-    setNewsletterResponse(response)
-
-    if (response.success) {
-      setNewsletterEmail("")
-    }
-  }
-
   return (
     <section id="contact" className="bg-black py-20 text-white">
       <div className="container mx-auto px-4">
@@ -153,11 +126,10 @@ export default function Contact() {
             <div className="mb-8 space-y-6">
               <div>
                 <h4 className="mb-2 text-lg font-semibold">Contacto</h4>
-                <p className="text-gray-300">Pedroluis Morenorojas</p>
-                <p className="text-gray-300">Gestor</p>
+                <p className="text-gray-300">Gestor del evento: Pedro Luis Moreno Rojas</p>
+                <p className="text-gray-300">Correo electrónico: info@bugaluz.com</p>
+                <p className="text-gray-300">Teléfono: +57 310 537 6088</p>
                 <p className="text-gray-300">Carrera 12 # 2-80 Buga, Valle, Colombia</p>
-                <p className="text-gray-300">+57 310 537 6088</p>
-                <p className="text-gray-300">info@bugaluz.com</p>
               </div>
 
               <div>
@@ -183,46 +155,6 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
-            </div>
-
-            <div className="rounded-lg bg-gray-900 p-6">
-              <h4 className="mb-4 text-lg font-semibold">Suscríbete a nuestro boletín</h4>
-              <p className="mb-4 text-gray-300">
-                Recibe las últimas noticias y actualizaciones sobre BUGALUZ directamente en tu bandeja de entrada.
-              </p>
-              <form className="flex flex-col sm:flex-row gap-2" onSubmit={handleNewsletterSubmit}>
-                <div className="w-full">
-                  <Input
-                    type="email"
-                    placeholder="Tu correo electrónico"
-                    className={`bg-gray-800 border-gray-700 text-white ${
-                      newsletterResponse?.errors?.some((e) => e.field === "email") ? "border-red-500" : ""
-                    }`}
-                    value={newsletterEmail}
-                    onChange={(e) => {
-                      setNewsletterEmail(e.target.value)
-                      if (newsletterResponse?.errors) setNewsletterResponse(null)
-                    }}
-                    required
-                  />
-                  {newsletterResponse?.errors?.some((e) => e.field === "email") && (
-                    <p className="text-sm text-red-400 mt-1">
-                      {newsletterResponse.errors.find((e) => e.field === "email")?.message}
-                    </p>
-                  )}
-                </div>
-                <Button type="submit" className="bg-orange-500 hover:bg-orange-600">
-                  Suscribirse
-                </Button>
-              </form>
-
-              {newsletterResponse && !newsletterResponse.errors && (
-                <Alert
-                  className={`mt-4 ${newsletterResponse.success ? "bg-green-900/20 text-green-400" : "bg-red-900/20 text-red-400"}`}
-                >
-                  <AlertDescription>{newsletterResponse.message}</AlertDescription>
-                </Alert>
-              )}
             </div>
           </div>
 
