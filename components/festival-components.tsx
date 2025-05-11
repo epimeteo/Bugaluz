@@ -7,7 +7,7 @@ export default function FestivalComponents() {
       id: "path-of-life",
       title: "PATH OF LIFE",
       description:
-        "372 asistentes presenciarán como la luz solar recorre la nave central de la Catedral San Pedro, generando una experiencia espiritual y arquitectónica inigualable. Evento Solar en la Catedral: Una experiencia visual única que marca el punto culminante del festival.",
+        "372 asistentes presenciarán como la luz solar recorre la nave central de la Catedral San Pedro, generando una experiencia espiritual y arquitectónica inigualable. Será una experiencia visual única que marca el punto culminante del festival.",
       icon: <Sun className="h-10 w-10 text-orange-500" />,
       color: "from-orange-500 to-yellow-500",
       hoverColor: "group-hover:from-orange-600 group-hover:to-yellow-600",
@@ -16,7 +16,7 @@ export default function FestivalComponents() {
       id: "sunergy-expo",
       title: "SUNERGY EXPO",
       description:
-        "Feria de energías renovables, tecnología solar y soluciones sostenibles. Un espacio para las empresas afiliadas al gremio licenciado. Feria de Energía Solar y Sostenibilidad: Stands donde los gremios y empresas patrocinadoras presentarán sus avances en energías renovables.",
+        "Feria de energías renovables, tecnología solar y soluciones sostenibles. Un espacio para las empresas afiliadas al gremio licenciado en donde presentarán sus avances en energías renovables.",
       icon: <Building2 className="h-10 w-10 text-green-500" />,
       color: "from-green-500 to-emerald-500",
       hoverColor: "group-hover:from-green-600 group-hover:to-emerald-600",
@@ -25,7 +25,7 @@ export default function FestivalComponents() {
       id: "lumia",
       title: "LUMIA",
       description:
-        "Mapping, instalaciones lumínicas y esculturas de luz toman la ciudad histórica, iluminando su memoria colectiva. Mapping y videommaping sobre edificios históricos, exhibiciones de arte lumínico en espacios públicos.",
+        "Mapping, instalaciones lumínicas y esculturas de luz toman la ciudad histórica, iluminando su memoria colectiva.",
       icon: <Lightbulb className="h-10 w-10 text-purple-500" />,
       color: "from-purple-500 to-indigo-500",
       hoverColor: "group-hover:from-purple-600 group-hover:to-indigo-600",
@@ -34,7 +34,7 @@ export default function FestivalComponents() {
       id: "solis-mundi",
       title: "SOLIS MUNDI",
       description:
-        "Foro académico sobre cultura solar, transición energética y sostenibilidad. Expertos panelistas del sector privado y público analizarán temas del sector energético renovable.",
+        "Foro académico sobre cultura solar, transición energética y sostenibilidad, donde expertos panelistas del sector privado y público analizarán temas del sector energético renovable.",
       icon: <Users className="h-10 w-10 text-blue-500" />,
       color: "from-blue-500 to-cyan-500",
       hoverColor: "group-hover:from-blue-600 group-hover:to-cyan-600",
