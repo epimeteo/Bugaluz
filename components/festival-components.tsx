@@ -7,7 +7,7 @@ export default function FestivalComponents() {
       id: "path-of-life",
       title: "PATH OF LIFE",
       description:
-        "372 asistentes presenciarán como la luz solar recorre la nave central de la Catedral San Pedro, generando una experiencia espiritual y arquitectónica inigualable. Será una experiencia visual única que marca el punto culminante del festival.",
+        "372 asistentes presenciarán como la luz solar recorre la nave central de la Catedral San Pedro, generando una experiencia espiritual y arquitectónica inigualable.",
       icon: <Sun className="h-10 w-10 text-orange-500" />,
       color: "from-orange-500 to-yellow-500",
       hoverColor: "group-hover:from-orange-600 group-hover:to-yellow-600",
