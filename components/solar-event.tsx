@@ -171,32 +171,35 @@ export default function SolarEvent() {
                       <h4 className="mb-4 font-semibold text-orange-400 text-center">
                         LISTADO DE LUGARES EN EL MUNDO DONDE EL SOL Y LA ARQUITECTURA CONVERGEN TRASCENDENTALMENTE
                       </h4>
-                      <div className="overflow-x-auto">
-                        <table className="w-full text-left">
-                          <thead>
-                            <tr className="border-b border-gray-700">
-                              <th className="p-2">#</th>
-                              <th className="p-2">LUGAR</th>
-                              <th className="p-2">UBICACIÓN</th>
-                              <th className="p-2">FECHAS</th>
-                              <th className="p-2">FENÓMENO SOLAR</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {solarPlaces.map((place, index) => (
-                              <tr
-                                key={index}
-                                className="border-b border-gray-800 hover:bg-gray-800/50 transition-colors duration-200"
-                              >
-                                <td className="p-2">{index + 1}</td>
-                                <td className="p-2">{place.place}</td>
-                                <td className="p-2">{place.location}</td>
-                                <td className="p-2">{place.dates}</td>
-                                <td className="p-2">{place.phenomenon}</td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {solarPlaces.map((place, index) => (
+                          <div
+                            key={index}
+                            className="bg-gray-800 p-3 rounded-md hover:bg-gray-700 transition-colors duration-200 border border-gray-700"
+                          >
+                            <div className="flex justify-between items-start">
+                              <h5 className="font-medium text-white text-sm">{place.place}</h5>
+                              <span className="bg-orange-500 text-white text-xs px-2 py-0.5 rounded-full">
+                                {index + 1}
+                              </span>
+                            </div>
+                            <div className="mt-2 space-y-1 text-xs">
+                              <p className="flex">
+                                <span className="text-gray-400 w-20 flex-shrink-0">Ubicación:</span>
+                                <span className="text-gray-200">{place.location}</span>
+                              </p>
+                              <p className="flex">
+                                <span className="text-gray-400 w-20 flex-shrink-0">Fechas:</span>
+                                <span className="text-gray-200">{place.dates}</span>
+                              </p>
+                              <p className="flex flex-col sm:flex-row">
+                                <span className="text-gray-400 w-20 flex-shrink-0">Fenómeno:</span>
+                                <span className="text-gray-200">{place.phenomenon}</span>
+                              </p>
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   )}
