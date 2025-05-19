@@ -1,4 +1,5 @@
 import type React from "react"
+
 interface SectionHeadingProps {
   children: React.ReactNode
   light?: boolean

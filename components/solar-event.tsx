@@ -1,13 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { Info } from "lucide-react"
-import { SectionHeading } from "@/components/section-heading"
+import { Info, Calendar, Clock } from "lucide-react"
+import { SectionHeading } from "./section-heading"
 import { Button } from "@/components/ui/button"
-import CountdownTimer from "./countdown-timer"
+import { AnimateOnScroll } from "./animate-on-scroll"
 
 export default function SolarEvent() {
-  const [showInfo, setShowInfo] = useState(false)
   const [showPlaces, setShowPlaces] = useState(false)
 
   const solarPlaces = [
@@ -130,103 +129,151 @@ export default function SolarEvent() {
   return (
     <section id="solar-event" className="bg-black py-20 text-white">
       <div className="container mx-auto px-4">
-        <SectionHeading light>El Evento Solar</SectionHeading>
+        <AnimateOnScroll animation="fade-in">
+          <SectionHeading light>El Evento Solar</SectionHeading>
+        </AnimateOnScroll>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:gap-12">
-          <div className="flex flex-col justify-start">
-            <p className="mb-6 text-gray-300">
-              Desde su construcción en el siglo XVII, la Catedral San Pedro de Buga ha sido testigo de un fenómeno solar
-              extraordinario. Cada 17 de mayo y 26 de julio (si las condiciones climáticas lo permiten) un rayo de sol
-              del atardecer atraviesa el óculo ubicado sobre la fachada principal, se refleja en el centro de la nave
-              principal, y comienza un recorrido que lo lleva hasta el altar, donde culmina iluminando el sagrario,
-              junto a otros dos rayos paralelos que hacen su propio recorrido por las naves laterales.
-            </p>
-            <p className="mb-6 text-gray-300">
-              Este evento ha sido documentado a lo largo de la historia y es considerado un legado arquitectónico y
-              espiritual de gran relevancia y unicidad especial: en solo 19 lugares del mundo suceden eventos similares:
-            </p>
+          <div className="flex flex-col justify-between">
+            <div>
+              <AnimateOnScroll animation="fade-in" delay={200}>
+                <p className="mb-6 text-gray-300">
+                  Desde su construcción en el siglo XVII, la Catedral San Pedro de Buga ha sido testigo de un fenómeno
+                  solar extraordinario. Cada 17 de mayo y 26 de julio (si las condiciones climáticas lo permiten) un
+                  rayo de sol del atardecer atraviesa el óculo ubicado sobre la fachada principal, se refleja en el
+                  centro de la nave principal, y comienza un recorrido que lo lleva hasta el altar, donde culmina
+                  iluminando el sagrario, junto a otros dos rayos paralelos que hacen su propio recorrido por las naves
+                  laterales.
+                </p>
+              </AnimateOnScroll>
 
-            <div className="mb-8">
-              <Button
-                variant="outline"
-                onClick={() => setShowPlaces(!showPlaces)}
-                className="flex items-center gap-2 border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white"
-              >
-                <Info className="h-4 w-4" />
-                {showPlaces ? "Ocultar listado de lugares" : "Ver listado de lugares"}
-              </Button>
+              <AnimateOnScroll animation="fade-in" delay={300}>
+                <p className="mb-6 text-gray-300">
+                  Este evento ha sido documentado a lo largo de la historia y es considerado un legado arquitectónico y
+                  espiritual de gran relevancia y unicidad especial: en solo 19 lugares del mundo suceden eventos
+                  similares:
+                </p>
+              </AnimateOnScroll>
 
-              {showPlaces && (
-                <div className="mt-4 rounded-lg bg-gray-900 p-4 text-sm max-h-80 overflow-y-auto">
-                  <h4 className="mb-4 font-semibold text-orange-400 text-center">
-                    LISTADO DE LUGARES EN EL MUNDO DONDE EL SOL Y LA ARQUITECTURA CONVERGEN TRASCENDENTALMENTE
-                  </h4>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-left">
-                      <thead>
-                        <tr className="border-b border-gray-700">
-                          <th className="p-2">#</th>
-                          <th className="p-2">LUGAR</th>
-                          <th className="p-2">UBICACIÓN</th>
-                          <th className="p-2">FECHAS</th>
-                          <th className="p-2">FENÓMENO SOLAR</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {solarPlaces.map((place, index) => (
-                          <tr key={index} className="border-b border-gray-800">
-                            <td className="p-2">{index + 1}</td>
-                            <td className="p-2">{place.place}</td>
-                            <td className="p-2">{place.location}</td>
-                            <td className="p-2">{place.dates}</td>
-                            <td className="p-2">{place.phenomenon}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
+              <AnimateOnScroll animation="fade-in" delay={400}>
+                <div className="mb-8">
+                  <Button
+                    variant="outline"
+                    onClick={() => setShowPlaces(!showPlaces)}
+                    className="flex items-center gap-2 border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white transition-all duration-300 hover:scale-105"
+                  >
+                    <Info className="h-4 w-4" />
+                    {showPlaces ? "Ocultar listado de lugares" : "Ver listado de lugares"}
+                  </Button>
+
+                  {showPlaces && (
+                    <div className="mt-4 rounded-lg bg-gray-900 p-4 text-sm max-h-80 overflow-y-auto animate-fadeIn">
+                      <h4 className="mb-4 font-semibold text-orange-400 text-center">
+                        LISTADO DE LUGARES EN EL MUNDO DONDE EL SOL Y LA ARQUITECTURA CONVERGEN TRASCENDENTALMENTE
+                      </h4>
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-left">
+                          <thead>
+                            <tr className="border-b border-gray-700">
+                              <th className="p-2">#</th>
+                              <th className="p-2">LUGAR</th>
+                              <th className="p-2">UBICACIÓN</th>
+                              <th className="p-2">FECHAS</th>
+                              <th className="p-2">FENÓMENO SOLAR</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {solarPlaces.map((place, index) => (
+                              <tr
+                                key={index}
+                                className="border-b border-gray-800 hover:bg-gray-800/50 transition-colors duration-200"
+                              >
+                                <td className="p-2">{index + 1}</td>
+                                <td className="p-2">{place.place}</td>
+                                <td className="p-2">{place.location}</td>
+                                <td className="p-2">{place.dates}</td>
+                                <td className="p-2">{place.phenomenon}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </AnimateOnScroll>
+
+              <AnimateOnScroll animation="fade-in" delay={500}>
+                <p className="mb-6 text-gray-300">
+                  El fenómeno solar de la Catedral San Pedro es un testimonio del conocimiento astronómico y
+                  arquitectónico de su época. La precisa alineación de su estructura refleja una intención de conectar
+                  la luz con la experiencia espiritual, simbolizando la iluminación divina y la trascendencia.
+                </p>
+              </AnimateOnScroll>
+            </div>
+
+            {/* Reemplazo del contador por un mensaje llamativo */}
+            <AnimateOnScroll animation="slide-up" delay={600}>
+              <div className="mt-8 mb-4">
+                <div className="bg-gradient-to-r from-orange-600 to-yellow-500 p-1 rounded-lg shadow-lg">
+                  <div className="bg-black rounded-md p-6 text-center">
+                    <h3 className="text-xl font-bold text-white mb-3">Próximas Transmisiones</h3>
+                    <div className="flex items-center justify-center gap-4 mb-4">
+                      <Calendar className="h-6 w-6 text-orange-400" />
+                      <span className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-yellow-300 text-transparent bg-clip-text">
+                        17 de Mayo y 26 de Julio de 2026
+                      </span>
+                    </div>
+                    <p className="text-gray-400 text-sm">¡No te pierdas este extraordinario fenómeno solar!</p>
                   </div>
                 </div>
-              )}
-            </div>
-
-            <p className="mb-6 text-gray-300">
-              El fenómeno solar de la Catedral San Pedro es un testimonio del conocimiento astronómico y arquitectónico
-              de su época. La precisa alineación de su estructura refleja una intención de conectar la luz con la
-              experiencia espiritual, simbolizando la iluminación divina y la trascendencia.
-            </p>
-
-            <div className="mt-auto">
-              <h4 className="mb-3 text-lg font-semibold">Próxima transmisión en vivo</h4>
-              <div className="mb-4">
-                <CountdownTimer targetDate="2025-07-26T16:45:00" />
               </div>
-            </div>
+            </AnimateOnScroll>
           </div>
 
           <div className="flex flex-col gap-6">
-            <div className="relative overflow-hidden rounded-lg">
-              <div className="aspect-w-16 aspect-h-9">
+            {/* Video de YouTube en la parte superior derecha */}
+            <div className="w-full">
+              <div className="w-full h-0 pb-[56.25%] relative rounded-lg overflow-hidden">
                 <iframe
                   src="https://www.youtube.com/embed/mOOEQBj6m6s"
                   title="Rayo de luz en la Catedral de San Pedro"
-                  className="h-full w-full"
+                  className="absolute top-0 left-0 w-full h-full"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4">
-                <p className="text-sm text-white">Rayo de luz en la Catedral de San Pedro</p>
-              </div>
+              <div className="mt-2 text-center text-white">Rayo de luz en la Catedral de San Pedro</div>
             </div>
 
-            <div className="rounded-lg bg-gray-900 p-6 h-[calc(100%-24rem)]">
-              <h3 className="mb-4 text-xl font-bold">Transmisión en vivo</h3>
-              <div className="flex flex-col justify-center items-center h-full">
-                <div className="text-center p-6">
-                  <p className="text-gray-400">La transmisión en vivo estará disponible durante el evento</p>
-                  <p className="text-sm text-gray-500 mt-2">26 de julio de 2025 - 4:45 PM</p>
-                </div>
+            {/* Transmisión en vivo actualizada con fechas y horas */}
+            <div className="rounded-lg bg-gray-900 p-6">
+              <h3 className="mb-4 text-xl font-bold flex items-center gap-2">
+                <Clock className="h-5 w-5 text-orange-400" />
+                Transmisión en vivo
+              </h3>
+              <div className="bg-gray-800 rounded-lg p-5">
+                <p className="text-white mb-3">Próximas transmisiones en directo:</p>
+                <ul className="space-y-3 text-gray-300">
+                  <li className="flex items-start">
+                    <span className="bg-orange-500 rounded-full w-2 h-2 mt-2 mr-2 flex-shrink-0"></span>
+                    <div>
+                      <span className="font-medium">17 de Mayo, 2026</span> -
+                      <span className="text-orange-300 ml-1">4:45 PM (hora local)</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="bg-orange-500 rounded-full w-2 h-2 mt-2 mr-2 flex-shrink-0"></span>
+                    <div>
+                      <span className="font-medium">26 de Julio, 2026</span> -
+                      <span className="text-orange-300 ml-1">4:45 PM (hora local)</span>
+                    </div>
+                  </li>
+                </ul>
+                <p className="mt-4 text-sm text-gray-400">
+                  Las transmisiones comenzarán 30 minutos antes del fenómeno solar para capturar todo el evento.
+                </p>
               </div>
             </div>
           </div>

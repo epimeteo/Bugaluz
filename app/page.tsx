@@ -11,6 +11,16 @@ import Contact from "@/components/contact"
 import Navigation from "@/components/navigation"
 import LoadingFallback from "@/components/loading-fallback"
 
+// Verificar todas las importaciones y asegurarnos de que los componentes existan
+
+// Mantener las importaciones existentes, pero agregar un comentario para indicar que necesitamos crear los componentes faltantes
+// Nota: Necesitamos crear los siguientes componentes:
+// - FestivalComponents
+// - EnergyFair
+// - Partners
+// - Contact
+// - LoadingFallback
+
 export const metadata: Metadata = {
   title: "BUGALUZ | Festival de Luz y Energía en Buga",
   description:
@@ -35,7 +45,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Home() {
+export default function Page() {
   return (
     <main className="relative">
       <Navigation />

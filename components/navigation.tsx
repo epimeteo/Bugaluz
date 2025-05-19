@@ -63,7 +63,7 @@ export default function Navigation() {
             </ul>
           </div>
 
-          {/* Mobile Menu Button - Positioned to the right */}
+          {/* Mobile Menu Button - Positioned at right */}
           <div className="absolute right-4 md:hidden">
             <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Menu">
               {isMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
